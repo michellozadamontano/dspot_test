@@ -2,13 +2,13 @@
 // Imports Section (Angular)
 //------------------------------------------------------------------------------------------------
 import { NgModule }                 from '@angular/core';
-import { BrowserModule }            from '@angular/platform-browser';
-import { BrowserAnimationsModule }  from '@angular/platform-browser/animations';
-import { HttpClientModule }         from '@angular/common/http';
+import { CommonModule }             from '@angular/common';
+import { DspotRoutingModule }       from './routes/dspot-routing.module';
 //------------------------------------------------------------------------------------------------
-// Imports Section (Routing)
+// Imports Section (Form)
 //------------------------------------------------------------------------------------------------
-import { AppRoutingModule }         from './app-routing.module';
+import { FormsModule }              from '@angular/forms';
+import { ReactiveFormsModule }      from '@angular/forms';
 //------------------------------------------------------------------------------------------------
 // Imports Section (Material)
 //------------------------------------------------------------------------------------------------
@@ -17,30 +17,40 @@ import { MatIconModule }            from '@angular/material/icon';
 import { MatMenuModule }            from '@angular/material/menu';
 import { MatButtonModule }          from '@angular/material/button';
 import { MatFormFieldModule }       from '@angular/material/form-field';
+import { MatInputModule }           from '@angular/material/input';
+import { MatCardModule }            from '@angular/material/card';
+//------------------------------------------------------------------------------------------------
+// Imports Section (Flex)
+//------------------------------------------------------------------------------------------------
+import { FlexLayoutModule }         from '@angular/flex-layout';
 //------------------------------------------------------------------------------------------------
 // Imports Section (Views)
 //------------------------------------------------------------------------------------------------
-import { AppComponent }             from './app.component';
-import { HomeComponent }            from './home/home.component';
+import { DspotViewComponent }       from './containers/dspot-view/dspot-view.component';
+import { DspotFormComponent }       from './components/dspot-form/dspot-form.component';
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    DspotViewComponent,
+    DspotFormComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
+    CommonModule,
+    DspotRoutingModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatFormFieldModule
-  ],
-  exports: [MatIconModule],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule
+  ]
 })
-export class AppModule { }
+export class DspotModule { }

@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+    <mat-card fxFlex=50>
+        <p>this form is for test</p>
+    
+    <app-dspot-form (Add)="formSubmit($event)"></app-dspot-form>
+    </mat-card>
+    <mat-card fxFlex=50>
+        <div fxLayout="column">
+            <p>Get the total Decks</p>
+            <button mat-raised-button (click)="clickButton()" color="primary"> Click Me</button>
+            <br>
+            <div>
+                <span *ngIf="total_decks">There is {{total_decks}} Decks</span>
+            </div>
+        </div>       
+        
+    </mat-card>
+</div>
+

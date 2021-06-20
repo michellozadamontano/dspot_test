@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+//----------------------------------------------------------------------------
+// Imports Routes
+//----------------------------------------------------------------------------
+import { ActivatedRoute }               from '@angular/router';
+import { Router}                        from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angulartest';
+  title = 'angular';
+
+  constructor(private router : Router)
+  {
+
+  }
+  dspotView()
+  {
+    this.router.navigate(['/dspot']);
+  }
+  home()
+  {
+    this.router.navigate(['/']);
+  }
+
 }

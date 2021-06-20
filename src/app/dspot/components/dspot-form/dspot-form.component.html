@@ -1,0 +1,51 @@
+
+<form [formGroup]=form (ngSubmit)="onSubmit(form.value)" class="px-12">
+    <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" class="w_field">
+            <div fxFlex=50 style="width: 100%;">
+                <p>
+                    <mat-form-field appearance='legacy' style="width: 100%;">
+                        <input matInput placeholder="name" formControlName="name">
+                    </mat-form-field>
+                </p>
+            </div>
+            <div fxFlex=50 style="width: 100%;">
+                <p>
+                    <mat-form-field appearance='legacy' style="width: 100%;">
+                        <input matInput placeholder="Last Name" formControlName="lastName">
+                    </mat-form-field>
+                </p>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" class="w_field">
+            <div fxFlex=50 style="width: 100%;">
+                <p>
+                    <mat-form-field appearance='legacy' class="w_field">
+                        <input matInput placeholder="Age" formControlName="age" type="number">
+                    </mat-form-field>
+                </p>
+            </div>
+            <div fxFlex=50 style="width: 100%;">
+                <p>
+                    <mat-form-field appearance='legacy' class="w_field">
+                        <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                   </p>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="10px" class="w_field">
+            <div style="width: 100%;" fxFlex>
+                
+                <mat-form-field appearance='legacy' class="w_field">
+                    <input matInput placeholder="Url" formControlName="url">
+                </mat-form-field>
+                
+            </div>            
+        </div>     
+       
+
+        <button mat-raised-button color="primary" [disabled]="form.invalid">Submit</button>
+        <br>
+        <p>Form Status: {{ form.status }}</p>
+    </div>
+</form>
